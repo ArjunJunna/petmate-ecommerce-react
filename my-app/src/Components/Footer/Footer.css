@@ -1,0 +1,92 @@
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 25rem;
+  grid-template-areas: 'social-media categories accounts contacts';
+  background-color: var(--footer-bg-color);
+}
+
+.social-media {
+  grid-area: social-media;
+}
+.categories {
+  grid-area: categories;
+}
+.accounts {
+  grid-area: accounts;
+}
+.contacts {
+  grid-area: contacts;
+}
+
+.footer-container .social-media {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-container .footer-info {
+  line-height: 1rem;
+}
+
+.footer-container .footer-h3 {
+  margin: 1.5rem 0;
+  color: var(--white-color);
+  font-weight: 400;
+}
+
+.footer .media-links a {
+  font-size: 2rem;
+}
+
+.footer .media-links .fab {
+  margin: 0 2rem;
+  color: var(--grey-color);
+}
+
+.media-links .fab:hover {
+  color: var(--white-color);
+}
+
+.footer-container .categories {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  padding: 3rem;
+}
+
+.list-h2 {
+  font-size: 2rem;
+  color: var(--white-color);
+}
+
+.list li {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  color: var(--grey-color);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.list li:hover {
+  color: var(--white-color);
+}
+
+.list a {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  color: var(--grey-color);
+  font-weight: 600;
+  cursor: pointer;
+  display: block;
+}
+
+.list a:hover {
+  color: var(--white-color);
+}

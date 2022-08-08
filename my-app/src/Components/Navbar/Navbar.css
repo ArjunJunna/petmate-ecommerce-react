@@ -1,0 +1,103 @@
+nav {
+  grid-area: header;
+  min-height: 7rem;
+  padding: 2rem 10rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header {
+  padding: 1rem 3rem;
+  border-bottom: 1px solid var(--border-color);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background-color:var(--header-bg-color); 
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.header__logo {
+  width: 14rem;
+}
+
+.sub__wrapper .search__container {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  min-width: 50rem;
+  display: flex;
+  height: 3.5rem;
+  align-items: center;
+  margin-left: 20rem;
+}
+
+.sub__wrapper .search__container:hover {
+  border: 1px solid var(--primary-color);
+}
+
+.sub__wrapper .search__container input {
+  border: none;
+  outline: none;
+  width: 95%;
+}
+
+.sub__wrapper .search__container .fa-search {
+  margin-left: 1.1rem;
+}
+
+.sub__wrapper .search__container i {
+  font-size: 1.5rem;
+  color: var(--grey-color);
+}
+
+.header__links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 20%;
+}
+
+.fa,
+.far,
+.fas,
+.fa-solid {
+  font-family: 'Font Awesome 5 Free';
+}
+
+.icon {
+  display: flex;
+  position: relative;
+}
+
+.header__links .icon-badge {
+  font-size: 2.2rem;
+  color: var(--grey-color);
+}
+.header__links .badge-primary {
+  color: var(--white-color);
+  font-size: 1.2rem;
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.4rem;
+  width: 2.6rem;
+  position: absolute;
+  top: -0.2rem;
+  left: 0.9rem;
+  font-weight: 700;
+}
+
+.sidebar-container {
+  border: 1px solid var(--border-color);
+}

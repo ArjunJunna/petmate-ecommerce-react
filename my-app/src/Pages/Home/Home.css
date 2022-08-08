@@ -1,0 +1,102 @@
+.page-container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 8rem auto 5rem;
+  grid-template-areas:
+    'header header header header'
+    'content content content content'
+    'footer footer footer footer';
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: content;
+}
+
+footer {
+  grid-area: footer;
+}
+
+.hero__container {
+  height: 70vh;
+  background-image: url(https://petmate-shop.netlify.app/images/background-image.png);
+  background-size: cover;
+  border-radius: 1rem;
+  background-position: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero__container .hero-btn {
+  position: absolute;
+  bottom: 10rem;
+  left: 47%;
+  width: 10rem;
+  font-weight: 600;
+}
+
+.hero__container .hero-btn:hover {
+  background-color: var(--primary-bg-color);
+  transform: scale(1.1);
+}
+
+.hero-heading {
+  margin: 2rem 0;
+  font-size: 3rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.hero__categories {
+  display: flex;
+  justify-content: space-around;
+}
+
+.hero__categories .item {
+  height: 30vh;
+  width: 20vw;
+  background-size: cover;
+  border-radius: 1rem;
+  background-position: center;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-1 {
+  background-image: url(https://petmate-shop.netlify.app/images/treats.jpg);
+}
+
+.item-2 {
+  background-image: url(https://petmate-shop.netlify.app/images/toy.png);
+}
+
+.item-3 {
+  background-image: url(https://petmate-shop.netlify.app/images/cat-food.jpg);
+}
+
+.item-4 {
+  background-image: url(https://petmate-shop.netlify.app/images/dog-food.jpg);
+}
+
+.item .item-name {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--yellow-color);
+}
+
+.discount {
+  color: var(--grey-color);
+  font-size: 1.2rem;
+  margin-left: 0.4rem;
+}
+
+.dashed{
+  margin-left: 0.4rem;
+}
