@@ -1,0 +1,11 @@
+.sidebar {
+  position: sticky;
+  top: calc(90px + 1rem);
+  margin-bottom: 10rem;
+  height: 90vh;
+  max-height: 100%;
+}
+.slider__label-container {
+  display: flex;
+  justify-content: space-between;
+}

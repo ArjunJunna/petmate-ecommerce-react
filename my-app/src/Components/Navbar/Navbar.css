@@ -15,7 +15,7 @@ nav {
   position: fixed;
   top: 0;
   z-index: 1;
-  background-color:var(--header-bg-color); 
+  background-color: var(--header-bg-color);
 }
 
 .header__wrapper {
@@ -57,6 +57,10 @@ nav {
 .sub__wrapper .search__container i {
   font-size: 1.5rem;
   color: var(--grey-color);
+}
+
+.sub__wrapper .search__container label {
+  margin-right: 0rem;
 }
 
 .header__links {
