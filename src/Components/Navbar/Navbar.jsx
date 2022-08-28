@@ -1,8 +1,14 @@
 import React from 'react';
 import '../Navbar/Navbar.css';
-import {Link} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDataContext } from '../../Context/dataContext';
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const {
+    state: { searchFor },
+    dispatch,
+  } = useDataContext();
   return (
     <>
       <header className="header">
@@ -16,12 +22,23 @@ const Navbar = () => {
           </Link>
           <div className="sub__wrapper">
             <div className="search__container">
-              <input type="text" placeholder="Search for item..." />
-              <i className="bi bi-search"></i>
+              <input
+                type="search"
+                placeholder="Search for item..."
+                id="search--bar"
+                value={searchFor}
+                onChange={e => {
+                  navigate('/product-list');
+                  dispatch({ type: 'SEARCH', payload: e.target.value });
+                }}
+              />
+              <label htmlFor="search--bar">
+                {searchFor === '' ? <i className="bi bi-search"></i> : null}
+              </label>
             </div>
           </div>
           <div className="header__links">
-            <Link to="/product.html" className="icon">
+            <Link to="/product-list" className="icon">
               <span className="icon-badge">
                 <i className="bi bi-house-door"></i>
               </span>
