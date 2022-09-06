@@ -2,9 +2,22 @@ import React from 'react';
 import '../Navbar/Navbar.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDataContext } from '../../Context/dataContext';
+import { useAuth } from '../../Context/authContext';
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const { auth, setAuth } = useAuth();
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    setAuth({
+      token: '',
+      isAuthenticated: false,
+    });
+    toast.success('You have been logged out successfully...');
+  };
+
   const {
     state: { searchFor },
     dispatch,
@@ -43,25 +56,31 @@ const Navbar = () => {
                 <i className="bi bi-house-door"></i>
               </span>
             </Link>
-            <Link to="/wish-list.html" className="icon">
+            <Link to="/wish-list" className="icon">
               <span className="icon-badge">
                 <i className="bi bi-bell"></i>
               </span>
               <span className="badge-primary">2</span>
             </Link>
 
-            <Link to="/cart-page.html" className="icon">
+            <Link to="/cart-list" className="icon">
               <span className="icon-badge">
                 <i className="bi bi-cart"></i>
               </span>
               <span className="badge-primary">2</span>
             </Link>
 
-            <Link to="/login-page" className="icon">
-              <span className="icon-badge">
-                <i className="bi bi-person-circle"></i>
-              </span>
-            </Link>
+            {auth?.token ? (
+              <div onClick={handleLogout}>
+                <Link to="/login-page" className="icon">
+                  <span className="icon-badge navbtn">Logout</span>
+                </Link>
+              </div>
+            ) : (
+              <Link to="/login-page" className="icon">
+                <span className="icon-badge navbtn">Login</span>
+              </Link>
+            )}
           </div>
         </div>
       </header>

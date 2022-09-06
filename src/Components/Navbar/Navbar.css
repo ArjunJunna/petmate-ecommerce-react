@@ -105,3 +105,21 @@ nav {
 .sidebar-container {
   border: 1px solid var(--border-color);
 }
+
+.header__links .navbtn {
+  display: block;
+  width: 100%;
+  font-family: 'Roboto Mono', monospace;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.6rem;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--btn-color);
+  cursor: pointer;
+  font-size: 1.7rem;
+}
+
+.header__links .navbtn:hover {
+  transition: background-color 1s;
+  background-color: var(--form-btn-color);
+}
