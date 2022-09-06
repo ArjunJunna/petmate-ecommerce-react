@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import Home from '../Pages/Home/Home';
-import LoginPage from '../Pages/Authentication/LoginPage';
+import LoginPage from '../Pages/Authentication/loginpage';
 import ProductList from '../Pages/ProductList/ProductList';
 
 import MockmanAPI from '../Components/MockMan/mock-man';
