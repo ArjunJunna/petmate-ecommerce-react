@@ -1,4 +1,3 @@
-
 .auth__container {
   height: auto;
   width: 35rem;
@@ -51,12 +50,15 @@
   background-color: var(--form-btn-color);
 }
 
+.auth__container #remember {
+  margin: 0 0.5rem 0 0;
+}
+
 .auth__container .f-pwd {
   position: absolute;
   right: 2rem;
   color: var(--link-color);
 }
-
 
 .text-field span::before {
   content: '';
@@ -75,4 +77,76 @@
 .txt_field input:focus ~ span::before,
 .text-field input:valid ~ span::before {
   width: 100%;
+}
+
+/*
+.text-field span::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  transition: 0.5s;
+}
+.text-field input:focus ~ label,
+.text-field input:valid ~ label {
+  top: -1px;
+  color: var(--black-color);
+}
+.txt_field input:focus ~ span::before,
+.text-field input:valid ~ span::before {
+  width: 100%;
+}
+*/
+.errMsg {
+  background-color: lightpink;
+  color: firebrick;
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.instructions {
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  background: #000;
+  color: #fff;
+  padding: 0.5rem;
+  position: relative;
+  bottom: 5px;
+}
+
+.instructions .icon {
+  margin-right: 1rem;
+  font-size: 1.75rem;
+}
+
+.offscreen {
+  position: absolute;
+  left: -9999px;
+}
+
+.valid {
+  color: limegreen;
+  margin-left: 0.5rem;
+}
+
+.invalid {
+  color: red;
+  margin-left: 0.5rem;
+}
+
+.hide {
+  display: none;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.disabled:hover {
+  background-color: var(--primary-color);
 }
