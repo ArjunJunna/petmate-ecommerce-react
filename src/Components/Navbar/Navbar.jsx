@@ -4,10 +4,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDataContext } from '../../Context/dataContext';
 import { useAuth } from '../../Context/authContext';
 import { toast } from 'react-toastify';
+import { useUserData } from '../../Context/userDataContext';
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const { auth, setAuth } = useAuth();
+  const {auth: { isAuthorized },setAuth} = useAuth();
+  const {
+    userData: { wishListData, cartListData },
+  } = useUserData();
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -51,26 +55,39 @@ const Navbar = () => {
             </div>
           </div>
           <div className="header__links">
-            <Link to="/product-list" className="icon">
+            <Link to="/home" className="icon">
               <span className="icon-badge">
                 <i className="bi bi-house-door"></i>
+                <span className="icon-text">home</span>
+              </span>
+            </Link>
+            <Link to="/product-list" className="icon">
+              <span className="icon-badge">
+                <i class="bi bi-shop-window"></i>
+                <span className="icon-text">shop</span>
               </span>
             </Link>
             <Link to="/wish-list" className="icon">
               <span className="icon-badge">
                 <i className="bi bi-bell"></i>
+                <span className="icon-text">wishlist</span>
               </span>
-              <span className="badge-primary">2</span>
+              {isAuthorized && (
+                <span className="badge-primary">{wishListData.length}</span>
+              )}
             </Link>
 
             <Link to="/cart-list" className="icon">
               <span className="icon-badge">
                 <i className="bi bi-cart"></i>
+                <span className="icon-text">cart</span>
               </span>
-              <span className="badge-primary">2</span>
+              {isAuthorized && (
+                <span className="badge-primary">{cartListData.length}</span>
+              )}
             </Link>
 
-            {auth?.token ? (
+            {isAuthorized ? (
               <div onClick={handleLogout}>
                 <Link to="/login-page" className="icon">
                   <span className="icon-badge navbtn">Logout</span>

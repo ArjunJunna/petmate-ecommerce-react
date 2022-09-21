@@ -57,6 +57,13 @@ const dataReducer = (state, action) => {
         excludeOutOfStock: '',
       };
 
+    case 'WISHLIST':
+      return {
+        ...state,
+        wishListDataId: action.payload.wishListDataId,
+        wishListData: action.payload.wishlistData,
+      };
+
     default:
       return state;
   }
