@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <main className="main">
-        <div className="container">
+        
           <NavBar />
           <NavBarRoutes />
           {/*<Footer />*/}
@@ -27,8 +27,9 @@ function App() {
             draggable
             pauseOnHover
           />
-        </div>
+        
       </main>
+      
       <Routes>
         <Route path="/mock-man" element={<MockmanAPI />} />
       </Routes>

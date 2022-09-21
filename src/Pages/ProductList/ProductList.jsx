@@ -11,6 +11,7 @@ import {
   filterDataByPricing,
   filterBySearch,
 } from '../../Utilities/JS/filterFunctions';
+import Footer from '../../Components/Footer/Footer';
 
 const ProductList = () => {
   const {
@@ -51,29 +52,38 @@ const ProductList = () => {
 
   return (
     <>
-      <Filter />
+      <div className="container">
+        <Filter />
 
-      <main>
-        {isLoading ? (
-          <img
-            className="loader--image"
-            src="https://cutewallpaper.org/21/loading-gif-transparent-background/HopeWell.gif"
-            alt="loader"
-          />
-        ) : (
-          <>
-            {finalData.length ? (
-              <div className="products">
-                {finalData.map(product => (
-                  <SingleProduct product={product} key={product._id} />
-                ))}
-              </div>
-            ) : (
-              <h1>Oops!!! This product section is currently unavailable...</h1>
-            )}
-          </>
-        )}
-      </main>
+        <main>
+          {isLoading ? (
+            <img
+              className="loader--image"
+              src="https://cutewallpaper.org/21/loading-gif-transparent-background/HopeWell.gif"
+              alt="loader"
+            />
+          ) : (
+            <>
+              {finalData.length ? (
+                <div className="products">
+                  {finalData.map(product => (
+                    <SingleProduct
+                      cardDirection={'vertical'}
+                      product={product}
+                      key={product._id}
+                    />
+                  ))}
+                </div>
+              ) : (
+                <h1>
+                  Oops!!! This product section is currently unavailable...
+                </h1>
+              )}
+            </>
+          )}
+        </main>
+        <Footer/>
+      </div>
     </>
   );
 };

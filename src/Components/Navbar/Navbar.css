@@ -65,7 +65,7 @@ nav {
 
 .header__links {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   width: 20%;
 }
@@ -85,6 +85,11 @@ nav {
 .header__links .icon-badge {
   font-size: 2.2rem;
   color: var(--grey-color);
+  display: flex;
+  flex-direction: column;
+}
+.icon-text {
+  font-size: 1.05rem;
 }
 .header__links .badge-primary {
   color: var(--white-color);
